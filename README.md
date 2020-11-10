@@ -1,7 +1,4 @@
 ### ASP .NET Core & Angular Food Ordering applcation
-<img src="screenshots/Screenshot_1.png">
-<img src="screenshots/Screenshot_2.png">
-<img src="screenshots/Screenshot_3.png">
 
 ## Angular
 - Services & Dependency Injection for cleaner components.
@@ -18,3 +15,8 @@
 - .NET Core Identity & Json Web token for Authentication
 -  EF queries, LINQ Joins.... 
 - Mltiple rows into a table using a single SQL Server INSERT statement.
+<img src="screenshots/Screenshot_1.png">
+<img src="screenshots/Screenshot_2.png">
+<img src="screenshots/Screenshot_3.png">
+
+
