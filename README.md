@@ -1,4 +1,4 @@
-### ASP .NET Core & Angular Food Ordering applcation
+### ASP .NET Core & Angular Food Ordering application
 
 #### Angular
 - Services & Dependency Injection for cleaner components.
