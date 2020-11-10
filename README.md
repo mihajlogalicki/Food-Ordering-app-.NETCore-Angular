@@ -1,13 +1,13 @@
 ### ASP .NET Core & Angular Food Ordering applcation
 
-## Angular
+#### Angular
 - Services & Dependency Injection for cleaner components.
 - Routing, Security Guards. 
 - HTTP Client for Web Services
 - Interceptor for Authorization & JWT
 - Reactive forms & Template Driven forms
 - Event Handling (Click), (Change) (KeyUp)...
-## .NET Core
+#### .NET Core
 - Web Services
 - Postman Testing
 - Entity Framework, Foreign Key - Constraints (table relationships)
