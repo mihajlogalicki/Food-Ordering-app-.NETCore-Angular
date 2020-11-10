@@ -1,0 +1,25 @@
+<img src="/assets/img/single_user.png" class="mx-auto d-block">
+<!-- Template Driven Approac-->
+<form #form='ngForm' class="mb-4 p-20"  autocomplete="off" (submit)="Login()">
+    <div class="form-group">
+        <label>Username</label>
+        <input  [(ngModel)]="UserName" name="UserName" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="Password" name="Password" class="form-control" required>
+    </div>
+    <div>
+    <a routerLink="/user/registration">Haven't Account? Register</a>
+    <router-outlet></router-outlet>    
+ </div>
+ <div class="form-group">
+    <h5>{{ wrongCredentials }}</h5>
+ </div>
+    <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" class="btn btn-lg btn-block" [disabled]="!form.valid">Sign In</button>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,20 @@
+<table class="table table-hover col-md-8">
+    <thead class="thead-light">
+        <th>#Order No.</th>
+        <th>Customer</th>
+        <th>Payment Method</th>
+        <th>Total</th>
+        <th>
+            <button class="btn btn-outline-success" routerLink="/home"><i class="fa fa-plus-square"></i> Create New</button>
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of AllOrders">
+            <th>{{ order.orderNumber }}</th>
+            <td>{{ order.fullName }}</td>
+            <td>{{ order.paymentMethod }}</td>
+            <td>{{ order.total }}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

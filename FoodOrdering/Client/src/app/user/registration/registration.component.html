@@ -1,0 +1,74 @@
+<div class="row mt-1">
+<div class="col-md-4">
+<div class="row" style="height: 450px;">
+    <div class="col-md-8 my-auto side-header mx-auto d-block">
+        <img src="assets/img/add_user.png" class="mx-auto d-block" alt="">
+        <h1 class="mx-auto d-block">User Registration</h1>
+        <p class="mx-auto d-block"><em>- Using <strong>Asp .NET Core Web API</strong> and <strong>Angular</strong></em></p>
+    </div>
+</div>
+</div>
+<div class="col-md-6 mx-auto d-block">
+<form [formGroup]="formModel" autocomplete="off" (submit)="SignUp()"> 
+    <div class="form-group required">
+        <label>Username</label>
+        <input class="form-control" formControlName="UserName">
+        <label class="text-danger" 
+        *ngIf="formModel.get('UserName').touched && formModel.get('UserName').errors?.required">
+            Username field is Mandatory!
+        </label>
+    </div>
+    <div class="form-group required">
+        <label>Email</label>
+        <input class="form-control" formControlName="Email">
+        <label class="text-danger" 
+        *ngIf="formModel.get('Email').touched && formModel.get('Email').errors?.email">
+            Invalid Email!
+        </label>
+    </div>
+    <div class="form-group required">
+        <label>FullName</label>
+        <input class="form-control" formControlName="FullName">
+    </div>
+    <div class="form-group required">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="Password">
+        <label class="text-danger" 
+        *ngIf="formModel.get('Password').touched && formModel.get('Password').errors?.required">
+            Password Field is Mandatory
+        </label>
+        <label class="text-danger" 
+        *ngIf="formModel.get('Password').touched && formModel.get('Password').errors?.minlength">
+            Minimum 4 characters required
+        </label>
+    </div>
+    <div class="form-group required">
+        <label>Confirm Password</label>
+        <input type="password" class="form-control" formControlName="ConfirmPassword">
+        <label class="text-danger" 
+        *ngIf="formModel.get('ConfirmPassword').touched && formModel.get('ConfirmPassword').errors?.required">
+            Confirm Password Field is Mandatory
+        </label>
+        <label class="text-danger" 
+        *ngIf="formModel.get('ConfirmPassword').touched && formModel.get('ConfirmPassword').errors?.PasswordMismatch">
+            Confirm Password Does not match
+        </label>
+    </div>
+    <div>
+       <a routerLink="/user/login">Have Account? Login</a>
+       <router-outlet></router-outlet>    
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+            <button type="submit" [disabled]="!formModel.valid" class="btn btn-lg btn-block">Sign Up</button>
+        </div>
+    </div>
+    
+</form>
+
+    <div class="form-group col-md-8 offset-md-2">
+       <span> {{ message }}</span>
+    </div>
+
+</div>
+</div>

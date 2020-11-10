@@ -1,0 +1,64 @@
+
+    <h3 class="display-4 text-center"><img src="/assets/img/food.png"> Resturant Application</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <form #form="ngForm" autocomplete="off" (submit)="Ordering()">
+        <div class="row center-container">
+                <div class="form-group">
+                    <label>Order Number</label>
+                    <input name="OrderNumber" [(ngModel)]="OrderNumber" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <select name="PaymentMethod" [(ngModel)]="PaymentMethod" class="form-control">
+                        <option value="{{ PaymentMethod }}" disabled>{{ PaymentMethod }}</option>
+                        <option value="Cash">Cash</option>
+                        <option value="Credit Card">Credit Card</option>
+                        <option value="Mobile Payment">Mobile Payment</option>
+                        <option value="">Electronic bank transfers.</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Total</label>
+                    <input name="Total" [(ngModel)]="Total" class="form-control" readonly>
+                </div>
+            </div>
+        <table class="table table-borderless col-md-6">
+            <thead class="thead-light">
+                <th>Food</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>
+                    <a class="btn btn-sm btn-success text-white" (click)="AddItem()">
+                     <i class="fa fa-plus"></i>   Add Item
+                    </a>
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of service.orderItems; let i = index">
+                    <td>{{ item.Name }}</td>
+                    <td>{{ item.Price }}</td>
+                    <td>{{ item.Quantity }}</td>
+                    <td>{{ item.Total }}</td>
+                    <td>
+                        <a class="btn btn-sm btn-danger text-white" (click)="DeleteItem(i)">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row text-center">
+            <div class="form-group">
+                <button type="submit" class="btn btn-dark text-center"><i class="fa fa-database"></i> Submit</button>
+                <button class="btn btn-outline-dark ml-1" routerLink="/order"><i class="fa fa-table"></i> View Orders</button>
+            </div>
+        </div>
+    </form>
+
